@@ -76,4 +76,4 @@ if __name__ == "__main__":
     sio = SerialIO()
     while sio.sign == 0:
         sio.run()
-        sleep(0.01)
+        sleep(0.01) 

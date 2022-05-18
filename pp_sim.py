@@ -131,4 +131,4 @@ data1 = data()
 data1.play() '''
 
 A=vehicle()
-print(A.div_traj)
+print(A.div_traj) 
