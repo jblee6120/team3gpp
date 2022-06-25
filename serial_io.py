@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding:utf-8 -*-
-
+# team3 serial communication protocall file to myrio board
 
 import serial
 import numpy as np

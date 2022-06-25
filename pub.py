@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 #! /usr/bin/env python3
-
+#control publication file(pure pursuit controller)
 from math import atan2, cos, degrees, radians, sin
 
 import matplotlib.pyplot as plt
