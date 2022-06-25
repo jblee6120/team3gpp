@@ -6,11 +6,11 @@ import matplotlib.pyplot as plt
 class vehicle:
     def __init__(self):
         # 로봇
-        self.P_veh = [0, 0] # 로봇의 좌표 [x, y]
-        self.trajectory=[self.P_veh,[2,7],[7,9],[11,15],[16,16],[20,25]] #로봇이 가야할 경로의 좌표, 처음 좌표는 항상 로봇의 현위치
+        self.P_veh = [-1,-1] # 로봇의 좌표 [x, y]
+        self.trajectory=[self.P_veh,[-3,2],[-6,2],[-9,1]] #로봇이 가야할 경로의 좌표, 처음 좌표는 항상 로봇의 현위치
         self.overcurve=0
         self.total_time=0
-        self.heading=180 # 북쪽이 0 
+        self.heading=0 # 북쪽이 0 
         self.go_left=0 
 
     def divide_traj(self):
@@ -45,9 +45,9 @@ class vehicle:
             index_goal=len(self.div_traj)-1
 
         Ld=self.get_distance(self.div_traj[index_goal], self.pre_veh)
-        L=0.47 # 바퀴간 거리
+        L=0.58 # 바퀴간 거리
         
-        beta=atan2(self.div_traj[index_goal][0]-self.P_veh[0],self.div_traj[index_goal][1]-self.P_veh[1]) # 차량->목적지 heading 값(각도아님)
+        beta=atan2(self.div_traj[index_goal][1]-self.P_veh[1],self.div_traj[index_goal][0]-self.P_veh[0]) # 차량->목적지 heading 값(각도아님)
         alpha=radians(self.heading)-beta # alpha값(각도) 구하기
 
         e=sin(alpha)*Ld # e가 양수(좌) / e가 음수(우)

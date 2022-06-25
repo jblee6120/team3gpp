@@ -17,7 +17,7 @@ class vehicle:
 
     def divide_traj(self):
         self.div_traj=[]
-        self.div_unit=1/2 # 한 구간을 나누기 위한 수
+        self.div_unit=0.2 # 한 구간을 나누기 위한 수
         for i in range(len(self.trajectory)-1):
             if(self.trajectory[i][0]==self.trajectory[i+1][0]): # x좌표가 서로 같은 경우
                 for j in range(int(3/self.div_unit)):
@@ -91,7 +91,7 @@ class vehicle:
 
 
     def move(self):
-        self.V_veh=[0.2*cos(radians(self.move_angle)), 0.2*sin(radians(self.move_angle))]
+        self.V_veh=[0.1*cos(radians(self.move_angle)), 0.2*sin(radians(self.move_angle))]
         time_interval=0.1 # 몇초 간격으로 차량을 움직일 것인가.
         self.P_veh=[self.P_veh[0]+time_interval*self.V_veh[0], self.P_veh[1]+time_interval*self.V_veh[1]]
         plt.plot(self.P_veh[0], self.P_veh[1],'bo')
